@@ -21,3 +21,4 @@ variable "mongo_password" {
   type        = string
   sensitive   = true
 }
+
