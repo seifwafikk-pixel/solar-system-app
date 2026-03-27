@@ -1,13 +1,10 @@
 {
   "version": 2,
   "builds": [
-    {
-      "src": "app.js",
-      "use": "@vercel/node",
-      "config": {
-        "includeFiles": ["images/**", "index.html", "app-controller.js"]
-      }
-    }
+    { "src": "app.js", "use": "@vercel/node" },
+    { "src": "images/**/*", "use": "@vercel/static" },
+    { "src": "index.html", "use": "@vercel/static" },
+    { "src": "app-controller.js", "use": "@vercel/static" }
   ],
   "routes": [
     { "handle": "filesystem" },
