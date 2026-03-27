@@ -12,12 +12,14 @@ app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, '/')));
 app.use(cors())
 
-mongoose.connect(process.env.MONGO_URI, {
-    user: process.env.MONGO_USERNAME,
-    pass: process.env.MONGO_PASSWORD,
+const options = {
     useNewUrlParser: true,
     useUnifiedTopology: true
-}, function(err) {
+};
+if (process.env.MONGO_USERNAME) options.user = process.env.MONGO_USERNAME;
+if (process.env.MONGO_PASSWORD) options.pass = process.env.MONGO_PASSWORD;
+
+mongoose.connect(process.env.MONGO_URI, options, function(err) {
     if (err) {
         console.log("error!! " + err)
     } else {

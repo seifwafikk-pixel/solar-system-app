@@ -3,7 +3,10 @@
   "builds": [
     {
       "src": "app.js",
-      "use": "@vercel/node"
+      "use": "@vercel/node",
+      "config": {
+        "includeFiles": ["images/**", "index.html", "app-controller.js"]
+      }
     }
   ],
   "routes": [
