@@ -1,0 +1,15 @@
+node_modules
+solar-system.png
+.nyc_output
+.talismanrc
+coverage
+test-results.xml
+.env
+
+# Terraform
+.terraform/
+terraform.tfstate
+terraform.tfstate.backup
+terraform.tfvars
+terraform.tfvars.example
+*.auto.tfvars
