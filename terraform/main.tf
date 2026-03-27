@@ -1,6 +1,11 @@
 resource "vercel_project" "solar_system" {
   name      = "solar-system-app"
   framework = "express"
+
+  git_repository = {
+    type = "github"
+    repo = "seifwafikk-pixel/solar-system-app"
+  }
 }
 
 resource "vercel_project_environment_variable" "mongo_uri" {
